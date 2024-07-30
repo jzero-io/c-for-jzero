@@ -1,6 +1,6 @@
-# c-func-to-jzero-desc
+# c-func-to-jzero
 
-c func convert to jzero server desc file
+c func convert to jzero server
 * api
 * proto
 
@@ -18,12 +18,12 @@ to:
 syntax = "v1"
 
 type AddTwoNumberRequest {
-  a int json:"a"`
-  b int json:"b"`
+  a int `json:"a"`
+  b int `json:"b"`
 }
 
 type AddTwoNumberResponse {
-  result int json:"result"`
+  result int `json:"result"`
 }
 
 @server (
