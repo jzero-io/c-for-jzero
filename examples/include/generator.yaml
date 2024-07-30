@@ -1,4 +1,3 @@
----
 GENERATOR:
   PackageName: add
   PackageDescription: "Package add provides Go bindings for add.h"

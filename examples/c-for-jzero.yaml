@@ -1,0 +1,5 @@
+app: add
+packages:
+  - name: add
+    paths:
+      - ./pkg/add/add.go

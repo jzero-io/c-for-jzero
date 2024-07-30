@@ -9,9 +9,16 @@ go install github.com/xlab/c-for-go@latest
 # install jzero
 go install github.com/jzero-io/jzero@main
 jzero check
+
+# install c-for-jzero
+go install github.com/jzero-io/c-for-jzero@main
 ```
 
 ## gen code
+
+```shell
+c-for-jzero gen
+```
 
 ```shell
 cd include
