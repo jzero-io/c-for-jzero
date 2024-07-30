@@ -11,6 +11,8 @@ go install github.com/jzero-io/jzero@main
 jzero check
 ```
 
+## gen code
+
 ```shell
 cd include
 c-for-go -out ../pkg generator.yaml
