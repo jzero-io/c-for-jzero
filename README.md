@@ -18,21 +18,19 @@ to:
 syntax = "v1"
 
 type AddTwoNumberRequest {
-  a int `json:"a"`
-  b int `json:"b"`
-}
-
-type AddTwoNumberResponse {
-  result int `json:"result"`
+    a int32 `json:"a"`
+    b int32 `json:"b"`
 }
 
 @server (
-	prefix: /api/v1
+    prefix: /api/v1
+    group:  add
 )
-service example {
-	@handler AddTwoNumberHandler
-	get /addTwoNumber (AddTwoNumberRequest) returns (AddTwoNumberResponse)
+service add {
+    @handler AddTwoNumberHandler
+    post /addTwoNumber (AddTwoNumberRequest) returns (int32)
 }
+
 ```
 
 ## new server by desc
