@@ -1,2 +1,5 @@
-# c-func-to-jzero
-c func convert to jzero server
+# c-func-to-jzero-desc
+
+c func convert to jzero server desc file
+* api
+* proto
