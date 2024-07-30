@@ -2,7 +2,12 @@
 
 ```shell
 cd include
-c-for-go generator.yaml
+c-for-go -out ../pkg generator.yaml
 cd ..
-gcc -fPIC -shared -o ./lib/add.so ./add.c
+mkdir -p lib
+gcc -fPIC -shared -o ./lib/libadd.so ./include/add.c
+
+CGO_ENABLED=1 go build
+jzero gen swagger
+./add server
 ```

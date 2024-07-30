@@ -7,8 +7,11 @@ GENERATOR:
     - add.h
   FlagGroups:
     - {name: "CFLAGS", flags: [
-      "-I.",
+      "-I../../include",
     ]}
+    - { name: "LDFLAGS", flags: [
+      "-L../../lib -ladd -Wl,-rpath,lib",
+    ] }
 
 PARSER:
   SourcesPaths:
