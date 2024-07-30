@@ -1,5 +1,16 @@
 # add
 
+## Install tools
+
+```shell
+# install c-for-go
+go install github.com/xlab/c-for-go@latest
+
+# install jzero
+go install github.com/jzero-io/jzero@main
+jzero check
+```
+
 ```shell
 cd include
 c-for-go -out ../pkg generator.yaml
