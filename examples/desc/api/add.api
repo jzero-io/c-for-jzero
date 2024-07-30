@@ -1,0 +1,19 @@
+syntax = "v1"
+
+type AddTwoNumberRequest {
+	a int `json:"a"`
+	b int `json:"b"`
+}
+
+type AddTwoNumberResponse {
+	result int `json:"result"`
+}
+
+@server (
+	prefix: /api/v1
+)
+service add {
+	@handler AddTwoNumberHandler
+	post /addTwoNumber (AddTwoNumberRequest) returns (AddTwoNumberResponse)
+}
+
