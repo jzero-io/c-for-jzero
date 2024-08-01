@@ -3,3 +3,5 @@ packages:
   - name: add
     paths:
       - ./pkg/add/add.go
+jzero:
+  branch: api

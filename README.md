@@ -4,6 +4,18 @@ c func convert to jzero server
 * api
 * proto
 
+## config
+
+```yaml
+app: add
+packages:
+  - name: add
+    paths:
+      - ./pkg/add/add.go
+jzero:
+  branch: api
+```
+
 ## example
 
 from:
@@ -30,12 +42,10 @@ service add {
     @handler AddTwoNumberHandler
     post /addTwoNumber (AddTwoNumberRequest) returns (int32)
 }
-
 ```
 
-## new server by desc
+and then:
 
 ```shell
-jzero new demo --branch api --output .
+jzero new add --branch api --output .
 ```
-
