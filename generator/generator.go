@@ -21,7 +21,7 @@ func New(groups []parser.Group) *Generator {
 func (g *Generator) Gen(conf config.Config) error {
 	for _, group := range g.Groups {
 		template, err := templatex.ParseTemplate(map[string]interface{}{
-			"Service": conf.App,
+			"Service": conf.Jzero.App,
 			"Group":   group.Name,
 			"Routes":  group.Routes,
 		}, []byte(tpl.ApiTpl))

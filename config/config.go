@@ -1,7 +1,6 @@
 package config
 
 type Config struct {
-	App      string    `yaml:"app"`
 	Packages []Package `yaml:"packages"`
 	Jzero    Jzero     `yaml:"jzero"`
 }
@@ -12,5 +11,6 @@ type Package struct {
 }
 
 type Jzero struct {
+	App    string `yaml:"app"`
 	Branch string `yaml:"branch"`
 }
