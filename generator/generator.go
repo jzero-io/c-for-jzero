@@ -1,11 +1,12 @@
 package generator
 
 import (
-	"fmt"
 	"github.com/jzero-io/c-for-jzero/config"
 	"github.com/jzero-io/c-for-jzero/generator/tpl"
 	"github.com/jzero-io/c-for-jzero/parser"
 	"github.com/jzero-io/c-for-jzero/pkg/templatex"
+	"os"
+	"path/filepath"
 )
 
 type Generator struct {
@@ -19,6 +20,7 @@ func New(groups []parser.Group) *Generator {
 }
 
 func (g *Generator) Gen(conf config.Config) error {
+	_ = os.MkdirAll(filepath.Join("desc", "api"), 0o755)
 	for _, group := range g.Groups {
 		template, err := templatex.ParseTemplate(map[string]interface{}{
 			"Service": conf.Jzero.App,
@@ -28,7 +30,10 @@ func (g *Generator) Gen(conf config.Config) error {
 		if err != nil {
 			return err
 		}
-		fmt.Println(string(template))
+		err = os.WriteFile(filepath.Join("desc", "api", group.Name+".api"), template, 0o644)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }

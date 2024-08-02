@@ -39,6 +39,8 @@ func bulkUpdateAge(persons []Person) {
 }
 ```
 
+* ignore `unsafe.Pointer`
+
 ## examples
 
 from:
